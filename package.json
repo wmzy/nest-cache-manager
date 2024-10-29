@@ -1,5 +1,5 @@
 {
-  "name": "@nestjs/cache-manager",
+  "name": "nestjs-cache-manager",
   "version": "2.3.0",
   "description": "Nest - modern, fast, powerful node.js web framework (@cache-manager)",
   "author": "Kamil Mysliwiec",
@@ -32,11 +32,14 @@
     "@typescript-eslint/parser": "8.12.1",
     "cache-manager": "6.1.2",
     "cache-manager-redis-yet": "5.1.5",
+    "@keyv/redis": "^3.0.1",
+    "cacheable": "^1.6.0",
     "eslint": "9.13.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.31.0",
     "husky": "9.1.6",
     "jest": "29.7.0",
+    "keyv": "^5.0.3",
     "lint-staged": "15.2.10",
     "prettier": "3.3.3",
     "reflect-metadata": "0.2.2",
@@ -50,7 +53,7 @@
   "peerDependencies": {
     "@nestjs/common": "^9.0.0 || ^10.0.0",
     "@nestjs/core": "^9.0.0 || ^10.0.0",
-    "cache-manager": "<=6",
+    "cache-manager": ">=6",
     "rxjs": "^7.0.0"
   },
   "lint-staged": {
