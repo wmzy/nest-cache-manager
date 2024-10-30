@@ -1,5 +1,5 @@
 {
-  "name": "nest-cache-manager",
+  "name": "wmzy-nestjs-cache-manager",
   "version": "3.0.0",
   "description": "Nest - modern, fast, powerful node.js web framework (@cache-manager)",
   "author": "Kamil Mysliwiec",
