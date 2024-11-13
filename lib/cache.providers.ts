@@ -4,7 +4,20 @@ import { MODULE_OPTIONS_TOKEN } from './cache.module-definition';
 import { defaultCacheOptions as defaultCacheOptionsOrigin } from './default-options';
 import { CacheManagerOptions } from './interfaces/cache-manager.interface';
 import { Keyv, KeyvStoreAdapter } from 'keyv';
-import { createCache } from 'cache-manager';
+import { createCache as createCacheOrigin } from 'cache-manager';
+
+function createCache(options: Parameters<typeof createCacheOrigin>[0]) {
+  const cache = createCacheOrigin(options);
+  return {
+    ...cache,
+    onModuleDestroy() {
+      return (
+        options.stores &&
+        Promise.all(options.stores.map(store => store.disconnect()))
+      );
+    },
+  };
+}
 
 /**
  * Creates a CacheManager Provider.
